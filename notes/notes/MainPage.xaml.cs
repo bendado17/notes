@@ -17,19 +17,22 @@ namespace notes
             InitializeComponent();
             Note note = new Note
             {
-                Name = "Nakup",
-                Text = "koupit krocana"
+                Name = "ales je kok",
+                Text = "ale je bily"
             };
             database.SaveNoteAsync(note);
 
             list = database.GetNotesAsync().Result;
             foreach(Note kok in list)
             {
-                Console.WriteLine(kok.Name);
+                Console.WriteLine(kok);
             }
 
+        }
 
-
+        public void OnAddNote(object sender, EventArgs args)
+        {
+            Navigation.PushAsync(new AddNote());
         }
     }
 }

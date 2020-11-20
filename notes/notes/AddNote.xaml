@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="notes.MainPage"
-             BackgroundColor="white">
+             x:Class="notes.AddNote"
+             BackgroundColor="#ff4f00">
 
     <ContentPage.Content>
         <Grid>
             <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
                 <RowDefinition Height="5*"/>
-                <RowDefinition Height="5*"/>
-                <RowDefinition Height="5*"/>
+                <RowDefinition Height="0*"/>
                 <RowDefinition Height="4*"/>
                 <RowDefinition Height="12*"/>
                 <RowDefinition Height="6*"/>
@@ -23,12 +23,13 @@
                 <ColumnDefinition Width="30*"/>
                 <ColumnDefinition Width="10*"/>
             </Grid.ColumnDefinitions>
-            
 
-            <Label Grid.Column="0" Grid.ColumnSpan="6" Grid.Row="0" TextColor="Black" BackgroundColor="#ff4f00"/>
-            <Button Text="+" Clicked="OnAddNote" BackgroundColor="#ff4f00" FontSize="40" VerticalOptions="Center" HorizontalOptions="Center" TextColor="#ffffff" Grid.Column="4" Grid.Row="0"/>
+            <Entry x:Name="NoteName" Keyboard="Text" Grid.Column="2" Grid.ColumnSpan="3" Grid.Row="1" FontSize="30" Placeholder="Name" TextColor="Black" BackgroundColor="white"/>
 
-            <Label Text="dwa" TextColor="black" FontSize="30" HorizontalTextAlignment="Start" Grid.Column="1" Grid.ColumnSpan="4" Grid.Row="1" Margin="5"/>
+            <Label Text="Note Text: " Grid.Column="1" Grid.ColumnSpan="4" Grid.Row="3" FontSize="40"  TextColor="Black"/>
+            <Editor x:Name="NoteText" Keyboard="Text" Grid.Column="1" Grid.ColumnSpan="4" Grid.Row="4" FontSize="20" TextColor="Black" BackgroundColor="white"/>
+
+            <Button Text="+" BackgroundColor="#222222" FontSize="40" TextColor="#ffffff" Grid.Column="1" Grid.Row="1"/>
         </Grid>
     </ContentPage.Content>
 
